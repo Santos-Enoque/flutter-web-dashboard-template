@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_web_dashboard/constants/controllers.dart';
-import 'package:get/get.dart';
-import 'package:flutter_web_dashboard/constants/style.dart';
+import 'package:flutter_web_dashboard/helpers/reponsiveness.dart';
+import 'package:flutter_web_dashboard/widgets/horizontal_menu_item.dart';
+import 'package:flutter_web_dashboard/widgets/vertical_menu_item.dart';
 
-import 'custom_text.dart';
 
 class SideMenuItem extends StatelessWidget {
   final String itemName;
@@ -13,43 +12,10 @@ class SideMenuItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    double _width = MediaQuery.of(context).size.width;
-
-    return  InkWell(
-                  onTap: onTap,
-                  onHover: (value){
-                    value ?
-                    menuController.onHover(itemName) : menuController.onHover("not hovering");
-                  },
-                  child: Obx(() => Container(
-                    color: menuController.isHovering(itemName) ? lightGrey.withOpacity(.1) : Colors.transparent,
-                    child: Row(
-                      children: [
-                        Visibility(
-                          visible: menuController.isHovering(itemName) || menuController.isActive(itemName),
-                          maintainSize: true,
-                          maintainAnimation: true,
-                          maintainState: true,
-                          child: Container(
-                            width: 6,
-                            height: 40,
-                            color: Colors.white,
-                          ),
-                        ),
-                       SizedBox(width:_width / 88),
-
-                        Padding(
-                          padding: const EdgeInsets.all(16),
-                          child: menuController.returnIconFor(itemName),
-                        ),
-                        if(!menuController.isActive(itemName))
-                        CustomText(text: itemName , color: menuController.isHovering(itemName) ? Colors.white : lightGrey,)
-                        else
-                        CustomText(text: itemName , color:  Colors.white , size: 18, weight: FontWeight.bold,)
-
-                      ],
-                    ),
-                  ))
-                );
+    if(ResponsiveWidget.isCustomSize(context)){
+      return VertticalMenuItem(itemName: itemName, onTap: onTap,);
+    }else{
+      return HorizontalMenuItem(itemName: itemName, onTap: onTap,);
+    }
   }
 }
