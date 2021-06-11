@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
-import 'package:flutter_web_dashboard/constants/style.dart';
 import 'package:flutter_web_dashboard/helpers/local_navigator.dart';
 import 'package:flutter_web_dashboard/helpers/reponsiveness.dart';
-import 'package:flutter_web_dashboard/widgets/custom_text.dart';
 import 'package:flutter_web_dashboard/widgets/large_screen.dart';
 import 'package:flutter_web_dashboard/widgets/side_menu.dart';
 
