@@ -66,7 +66,8 @@ AppBar(
                   padding: EdgeInsets.all(2),
                   margin: EdgeInsets.all(2),
                   child: CircleAvatar(
-                        backgroundImage: AssetImage("assets/images/profile.jpg"),
+                    backgroundColor: light,
+                    child: Icon(Icons.person_outline, color: dark,),
                     ),
                 ),
               )
