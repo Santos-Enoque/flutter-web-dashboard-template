@@ -1,53 +1,28 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
-import 'package:flutter_web_dashboard/constants/style.dart';
-import 'package:flutter_web_dashboard/widgets/custom_text.dart';
+import 'package:flutter_web_dashboard/helpers/local_navigator.dart';
+import 'package:flutter_web_dashboard/helpers/reponsiveness.dart';
+import 'package:flutter_web_dashboard/widgets/large_screen.dart';
+import 'package:flutter_web_dashboard/widgets/side_menu.dart';
+
+import 'widgets/top_nav.dart';
+
 
 class SiteLayout extends StatelessWidget {
-  const SiteLayout({Key key}) : super(key: key);
-
+  final GlobalKey<ScaffoldState> scaffoldKey = GlobalKey();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Row(
-        children: [
-          Expanded(
-              child: Container(
-            color: dark,
-            child: ListView(
-              children: [
-                SizedBox(height: 40,),
-               Row(
-                    children: [
-                      Padding(
-                        padding: const EdgeInsets.symmetric(horizontal:12),
-                        child: SvgPicture.asset("assets/icons/logo.svg"),
-                      ),
-                      CustomText(
-                        text: "Admin Panel",
-                        size: 20,
-                        weight: FontWeight.bold,
-                        color: lightGgrey,
-                      )
-                    ],
-                  )
-
-              ],
-            ),
-          )),
-          Expanded(
-              flex: 5,
-              child: Container(
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-
-                      Text(MediaQuery.of(context).size.width.toString() + "Hallend", style: TextStyle(fontSize: 39)),
-                  ],
-
-                ),
-              )),
-        ],
+      extendBodyBehindAppBar: true,
+      appBar:  topNavigationBar(context, scaffoldKey),
+      drawer: Drawer(
+        child: SideMenu(),
+      ),
+      body: ResponsiveWidget(
+        largeScreen: LargeScreen(),
+      smallScreen: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 16),
+        child: localNavigator(),
+      ),
       ),
     );
   }
