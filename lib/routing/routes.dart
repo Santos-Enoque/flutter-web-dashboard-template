@@ -5,5 +5,7 @@ const clientsPageRoute = "Clients";
 List sideMenuItemRoutes = [
   overviewPageRoute,
   driversPageRoute,
-  clientsPageRoute
+  clientsPageRoute,
+
+
 ];

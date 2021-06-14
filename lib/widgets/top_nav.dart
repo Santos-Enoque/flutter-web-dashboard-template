@@ -11,7 +11,7 @@ AppBar(
           children: [
             Padding(
               padding: const EdgeInsets.only(left: 16),
-              child: SvgPicture.asset("assets/icons/logo.svg", width: 28,),
+              child: Image.asset("assets/icons/logo.png", width: 28,),
             ),
           ],
         ) : IconButton(icon: Icon(Icons.menu), onPressed: (){

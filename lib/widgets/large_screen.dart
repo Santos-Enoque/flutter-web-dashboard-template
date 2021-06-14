@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_web_dashboard/helpers/local_navigator.dart';
+import 'package:flutter_web_dashboard/pages/overview/overview.dart';
+import 'package:flutter_web_dashboard/widgets/custom_text.dart';
 import 'package:flutter_web_dashboard/widgets/side_menu.dart';
 
 class LargeScreen extends StatelessWidget {
@@ -8,15 +10,16 @@ class LargeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Row(
-        children: [
-          Expanded(
-              child: SideMenu()),
-          Expanded(
-              flex: 5,
-              child: Container(
-                margin: EdgeInsets.symmetric(horizontal: 16),
-                child: localNavigator()),),
-        ],
-      );
+        crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Expanded(
+                  child: SideMenu()),
+              Expanded(
+                  flex: 5,
+                  child: Container(
+                    margin: EdgeInsets.symmetric(horizontal: 16),
+                    child: localNavigator()))
+            ],
+          );
   }
 }
