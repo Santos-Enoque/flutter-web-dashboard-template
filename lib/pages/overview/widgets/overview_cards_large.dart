@@ -40,9 +40,6 @@ class OverviewCardsLargeScreen extends StatelessWidget {
                   value: "32",
                   onTap: () {},
                 ),
-                SizedBox(
-                  width: _width / 64,
-                ),
               ],
             );
   }

@@ -18,9 +18,15 @@ class InfoCard extends StatelessWidget {
         child: Container(
           height: 136,
           alignment: Alignment.center,
-          padding: EdgeInsets.all(24),
           decoration: BoxDecoration(
             color: Colors.white,
+            boxShadow: [
+              BoxShadow(
+                offset: Offset(0, 6),
+                color: lightGrey.withOpacity(.1),
+                blurRadius: 12
+              )
+            ],
             borderRadius: BorderRadius.circular(8),
             border: Border.all(color: isActive ? active : lightGrey, width: .5),
           ),
