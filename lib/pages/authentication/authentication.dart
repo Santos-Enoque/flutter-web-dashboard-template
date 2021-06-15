@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_web_dashboard/constants/style.dart';
 import 'package:flutter_web_dashboard/widgets/custom_text.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -9,8 +10,8 @@ class AuthenticationPage extends StatelessWidget {
     return Scaffold(
       body: Center(
         child: Container(
-          constraints: BoxConstraints(maxWidth: 580),
-          color: Colors.red,
+          constraints: BoxConstraints(maxWidth: 400),
+          padding: EdgeInsets.all(24),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
@@ -34,6 +35,41 @@ class AuthenticationPage extends StatelessWidget {
                   )),
                 ],
               ),
+               SizedBox(
+                height: 10,
+              ),
+              Row(
+                children: [
+                  CustomText(text: "Welcome back to the admin panel.", color: lightGrey,),
+                ],
+              ),
+               SizedBox(
+                height: 15,
+              ),
+             
+              TextField(
+                  decoration: InputDecoration(
+                    icon: Icon(Icons.email_outlined),
+                    labelText: "Email",
+                    hintText: "abc@domain.com",
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(20))
+                  ),
+                ),
+ SizedBox(
+                height: 15,
+              ),
+                 
+              TextField(
+                obscureText: true,
+                  decoration: InputDecoration(
+                    icon: Icon(Icons.lock_outline),
+                    labelText: "Password",
+                    hintText: "123",
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(20))
+                  ),
+                ),
               
             ],
           ),
