@@ -7,6 +7,8 @@ import 'package:flutter_web_dashboard/pages/overview/widgets/overview_cards_smal
 import 'package:flutter_web_dashboard/widgets/custom_text.dart';
 import 'package:get/get_state_manager/get_state_manager.dart';
 
+import 'widgets/revenue_section_large.dart';
+
 class OverViewPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -35,9 +37,13 @@ class OverViewPage extends StatelessWidget {
               else
                 OverviewCardsLargeScreen()
             else
-              OverviewCardsSmallScreen()
+              OverviewCardsSmallScreen(),
+
+        RevenueSectionLarge()
+
           ],
-        ))
+        )),
+
       ],
     );
   }
