@@ -1,5 +1,3 @@
-import 'dart:js';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_web_dashboard/pages/clients/clients.dart';
 import 'package:flutter_web_dashboard/pages/drivers/drivers.dart';
