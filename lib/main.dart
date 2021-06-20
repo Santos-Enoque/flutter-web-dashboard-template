@@ -4,8 +4,7 @@ import 'package:flutter_web_dashboard/controllers/menu_controller.dart';
 import 'package:flutter_web_dashboard/controllers/navigation_controller.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
-
-import 'layout.dart';
+import 'pages/authentication/authentication.dart';
 
 void main() {
   Get.put(MenuController());
@@ -34,7 +33,7 @@ class MyApp extends StatelessWidget {
         }),
         primaryColor: Colors.blue
       ),
-      home: SiteLayout(),
+      home: AuthenticationPage(),
     );
   }
 }
