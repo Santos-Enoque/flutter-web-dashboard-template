@@ -4,6 +4,8 @@ import 'package:flutter_web_dashboard/helpers/responsiveness.dart';
 import 'package:flutter_web_dashboard/widgets/custom_text.dart';
 import 'package:get/get_state_manager/src/rx_flutter/rx_obx_widget.dart';
 
+import 'widgets/clients_table.dart';
+
 class ClientsPage extends StatelessWidget {
  @override
   Widget build(BuildContext context) {
@@ -21,6 +23,13 @@ class ClientsPage extends StatelessWidget {
                 weight: FontWeight.bold,
               ),
             )
+          ],
+        )),
+
+           Expanded(child: 
+        ListView(
+          children: [
+            ClientsTable()
           ],
         ))
       ],
