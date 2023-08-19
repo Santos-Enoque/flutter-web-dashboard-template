@@ -8,11 +8,11 @@ import 'package:flutter_web_dashboard/widgets/side_menu_item.dart';
 import 'package:get/get.dart';
 
 class SideMenu extends StatelessWidget {
-  const SideMenu({ Key key }) : super(key: key);
+  const SideMenu({ Key? key }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    double _width = MediaQuery.of(context).size.width;
+    double width = MediaQuery.of(context).size.width;
 
     return Container(
             color: light,
@@ -22,17 +22,17 @@ class SideMenu extends StatelessWidget {
                 Column(
                   mainAxisSize: MainAxisSize.min,
                   children: [
-                    SizedBox(
+                    const SizedBox(
                       height: 40,
                     ),
                     Row(
                       children: [
-                        SizedBox(width: _width / 48),
+                        SizedBox(width: width / 48),
                         Padding(
                           padding: const EdgeInsets.only(right: 12),
                           child: Image.asset("assets/icons/logo.png"),
                         ),
-                        Flexible(
+                        const Flexible(
                           child: CustomText(
                             text: "Dash",
                             size: 20,
@@ -40,10 +40,10 @@ class SideMenu extends StatelessWidget {
                             color: active,
                           ),
                         ),
-                        SizedBox(width: _width / 48),
+                        SizedBox(width: width / 48),
                       ],
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 30,
                     ),
                   ],
@@ -63,8 +63,9 @@ class SideMenu extends StatelessWidget {
                             }
                             if (!menuController.isActive(item.name)) {
                               menuController.changeActiveItemTo(item.name);
-                              if(ResponsiveWidget.isSmallScreen(context))
-                              Get.back();
+                              if(ResponsiveWidget.isSmallScreen(context)) {
+                                Get.back();
+                              }
                               navigationController.navigateTo(item.route);
                             }
                           }))

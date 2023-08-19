@@ -3,12 +3,14 @@ import 'info_card_small.dart';
 
 
 class OverviewCardsSmallScreen extends StatelessWidget {
+  const OverviewCardsSmallScreen({super.key});
+
 
   @override
   Widget build(BuildContext context) {
-   double _width = MediaQuery.of(context).size.width;
+   double width = MediaQuery.of(context).size.width;
 
-    return  Container(
+    return  SizedBox(
       height: 400,
       child: Column(
         children: [
@@ -19,7 +21,7 @@ class OverviewCardsSmallScreen extends StatelessWidget {
                         isActive: true,
                       ),
                       SizedBox(
-                        height: _width / 64,
+                        height: width / 64,
                       ),
                       InfoCardSmall(
                         title: "Packages delivered",
@@ -27,7 +29,7 @@ class OverviewCardsSmallScreen extends StatelessWidget {
                         onTap: () {},
                       ),
                      SizedBox(
-                        height: _width / 64,
+                        height: width / 64,
                       ),
                           InfoCardSmall(
                         title: "Cancelled delivery",
@@ -35,7 +37,7 @@ class OverviewCardsSmallScreen extends StatelessWidget {
                         onTap: () {},
                       ),
                       SizedBox(
-                        height: _width / 64,
+                        height: width / 64,
                       ),
                       InfoCardSmall(
                         title: "Scheduled deliveries",

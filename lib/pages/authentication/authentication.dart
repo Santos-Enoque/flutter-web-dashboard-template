@@ -6,14 +6,14 @@ import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class AuthenticationPage extends StatelessWidget {
-  const AuthenticationPage({Key key}) : super(key: key);
+  const AuthenticationPage({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
         child: Container(
-          constraints: BoxConstraints(maxWidth: 400),
-          padding: EdgeInsets.all(24),
+          constraints: const BoxConstraints(maxWidth: 400),
+          padding: const EdgeInsets.all(24),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
@@ -26,7 +26,7 @@ class AuthenticationPage extends StatelessWidget {
                   Expanded(child: Container()),
                 ],
               ),
-              SizedBox(
+              const SizedBox(
                 height: 30,
               ),
               Row(
@@ -36,10 +36,10 @@ class AuthenticationPage extends StatelessWidget {
                           fontSize: 30, fontWeight: FontWeight.bold)),
                 ],
               ),
-              SizedBox(
+              const SizedBox(
                 height: 10,
               ),
-              Row(
+              const Row(
                 children: [
                   CustomText(
                     text: "Welcome back to the admin panel.",
@@ -47,7 +47,7 @@ class AuthenticationPage extends StatelessWidget {
                   ),
                 ],
               ),
-              SizedBox(
+              const SizedBox(
                 height: 15,
               ),
               TextField(
@@ -57,7 +57,7 @@ class AuthenticationPage extends StatelessWidget {
                     border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(20))),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 15,
               ),
               TextField(
@@ -68,7 +68,7 @@ class AuthenticationPage extends StatelessWidget {
                     border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(20))),
               ),
-               SizedBox(
+               const SizedBox(
                 height: 15,
               ),
               Row(
@@ -77,17 +77,17 @@ class AuthenticationPage extends StatelessWidget {
                   Row(
                     children: [
                       Checkbox(value: true, onChanged: (value){}),
-                      CustomText(text: "Remeber Me",),
+                      const CustomText(text: "Remeber Me",),
                     ],
                   ),
 
-                  CustomText(
+                  const CustomText(
                     text: "Forgot password?",
                     color: active
                   )
                 ],
               ),
-                SizedBox(
+                const SizedBox(
                 height: 15,
               ),
               InkWell(
@@ -99,19 +99,19 @@ class AuthenticationPage extends StatelessWidget {
                   borderRadius: BorderRadius.circular(20)),
                   alignment: Alignment.center,
                   width: double.maxFinite,
-                  padding: EdgeInsets.symmetric(vertical: 16),
-                  child: CustomText(
+                  padding: const EdgeInsets.symmetric(vertical: 16),
+                  child: const CustomText(
                     text: "Login",
                     color: Colors.white,
                   ),
                 ),
               ),
 
-               SizedBox(
+               const SizedBox(
                 height: 15,
               ),
 
-              RichText(text: TextSpan(
+              RichText(text: const TextSpan(
                 children: [
                   TextSpan(text: "Do not have admin credentials? "),
                   TextSpan(text: "Request Credentials! ", style: TextStyle(color: active))
