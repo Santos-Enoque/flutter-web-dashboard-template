@@ -7,12 +7,12 @@ import 'custom_text.dart';
 
 class HorizontalMenuItem extends StatelessWidget {
     final String itemName;
-  final Function onTap;
-  const HorizontalMenuItem({ Key key, this.itemName, this.onTap }) : super(key: key);
+  final Function()? onTap;
+  const HorizontalMenuItem({ Key? key,required this.itemName, this.onTap }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    double _width = MediaQuery.of(context).size.width;
+    double width = MediaQuery.of(context).size.width;
 
     return InkWell(
                   onTap: onTap,
@@ -35,7 +35,7 @@ class HorizontalMenuItem extends StatelessWidget {
                             color: dark,
                           ),
                         ),
-                       SizedBox(width:_width / 88),
+                       SizedBox(width:width / 88),
 
                         Padding(
                           padding: const EdgeInsets.all(16),

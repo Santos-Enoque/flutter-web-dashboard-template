@@ -5,18 +5,20 @@ import 'package:flutter_web_dashboard/pages/overview/widgets/revenue_info.dart';
 import 'package:flutter_web_dashboard/widgets/custom_text.dart';
 
 class RevenueSectionLarge extends StatelessWidget {
+  const RevenueSectionLarge({super.key});
+
 
   @override
   Widget build(BuildContext context) {
     return  Container(
-                padding: EdgeInsets.all(24),
-                margin: EdgeInsets.symmetric(vertical: 30),
+                padding: const EdgeInsets.all(24),
+                margin: const EdgeInsets.symmetric(vertical: 30),
                 decoration: BoxDecoration(
                   color: Colors.white,
                   borderRadius: BorderRadius.circular(8),
                   boxShadow: [
                     BoxShadow(
-                        offset: Offset(0, 6),
+                        offset: const Offset(0, 6),
                         color: lightGrey.withOpacity(.1),
                         blurRadius: 12)
                   ],
@@ -28,13 +30,13 @@ class RevenueSectionLarge extends StatelessWidget {
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: [
-                          CustomText(
+                          const CustomText(
                             text: "Revenue Chart",
                             size: 20,
                             weight: FontWeight.bold,
                             color: lightGrey,
                           ),
-                          Container(
+                          SizedBox(
                               width: 600,
                               height: 200,
                               child: SimpleBarChart.withSampleData()),
@@ -46,14 +48,14 @@ class RevenueSectionLarge extends StatelessWidget {
                       height: 120,
                       color: lightGrey,
                     ),
-                    Expanded(
+                    const Expanded(
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: [
                           Row(
                             children: [
                               RevenueInfo(
-                                title: "Toda\'s revenue",
+                                title: "Toda's revenue",
                                 amount: "230",
                               ),
                               RevenueInfo(

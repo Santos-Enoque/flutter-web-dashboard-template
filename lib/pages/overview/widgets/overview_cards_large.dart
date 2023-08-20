@@ -3,10 +3,12 @@ import 'package:flutter_web_dashboard/pages/overview/widgets/info_card.dart';
 
 
 class OverviewCardsLargeScreen extends StatelessWidget {
+  const OverviewCardsLargeScreen({super.key});
+
 
   @override
   Widget build(BuildContext context) {
-   double _width = MediaQuery.of(context).size.width;
+   double width = MediaQuery.of(context).size.width;
 
     return  Row(
               children: [
@@ -17,7 +19,7 @@ class OverviewCardsLargeScreen extends StatelessWidget {
                   topColor: Colors.orange,
                 ),
                 SizedBox(
-                  width: _width / 64,
+                  width: width / 64,
                 ),
                 InfoCard(
                   title: "Packages delivered",
@@ -26,7 +28,7 @@ class OverviewCardsLargeScreen extends StatelessWidget {
                   onTap: () {},
                 ),
                 SizedBox(
-                  width: _width / 64,
+                  width: width / 64,
                 ),
                 InfoCard(
                   title: "Cancelled delivery",
@@ -35,7 +37,7 @@ class OverviewCardsLargeScreen extends StatelessWidget {
                   onTap: () {},
                 ),
                 SizedBox(
-                  width: _width / 64,
+                  width: width / 64,
                 ),
                 InfoCard(
                   title: "Scheduled deliveries",
