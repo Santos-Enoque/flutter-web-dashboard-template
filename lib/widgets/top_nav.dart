@@ -1,8 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_web_dashboard/constants/style.dart';
 import 'package:flutter_web_dashboard/helpers/reponsiveness.dart';
+import 'package:flutter_web_dashboard/pages/notifications/notifications.dart';
+import 'package:flutter_web_dashboard/pages/notifications/settings_screen.dart';
+
+import 'package:flutter_web_dashboard/pages/users/usersscreen.dart';
 
 import 'custom_text.dart';
+// Import your UserScreen file
 
 AppBar topNavigationBar(BuildContext context, GlobalKey<ScaffoldState> key) =>
     AppBar(
@@ -29,7 +34,7 @@ AppBar topNavigationBar(BuildContext context, GlobalKey<ScaffoldState> key) =>
               visible: !ResponsiveWidget.isSmallScreen(context),
               child: const CustomText(
                 text: "Dash",
-                color: lightGrey,
+                color: Color.fromARGB(255, 5, 25, 10),
                 size: 20,
                 weight: FontWeight.bold,
               )),
@@ -39,15 +44,37 @@ AppBar topNavigationBar(BuildContext context, GlobalKey<ScaffoldState> key) =>
                 Icons.settings,
                 color: dark,
               ),
-              onPressed: () {}),
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => const SettingsScreen()),
+                );
+              }),
           Stack(
             children: [
-              IconButton(
+              GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const UsersScreen()),
+                  );
+                },
+                child: IconButton(
                   icon: Icon(
                     Icons.notifications,
                     color: dark.withOpacity(.7),
                   ),
-                  onPressed: () {}),
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const NotificationScreen()),
+                    );
+                  },
+                ),
+              ),
               Positioned(
                 top: 7,
                 right: 7,
@@ -72,7 +99,7 @@ AppBar topNavigationBar(BuildContext context, GlobalKey<ScaffoldState> key) =>
             width: 24,
           ),
           const CustomText(
-            text: "Santos Enoque",
+            text: "Aravind Paul",
             color: lightGrey,
           ),
           const SizedBox(
@@ -90,7 +117,7 @@ AppBar topNavigationBar(BuildContext context, GlobalKey<ScaffoldState> key) =>
               child: const CircleAvatar(
                 backgroundColor: light,
                 child: Icon(
-                  Icons.person_outline,
+                  Icons.person_2_outlined,
                   color: dark,
                 ),
               ),

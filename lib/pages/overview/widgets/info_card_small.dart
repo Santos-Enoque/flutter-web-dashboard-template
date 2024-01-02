@@ -26,7 +26,8 @@ class InfoCardSmall extends StatelessWidget {
             decoration: BoxDecoration(
               color: Colors.white,
               borderRadius: BorderRadius.circular(8),
-              border: Border.all(color: isActive ? active : lightGrey, width: .5),
+              border:
+                  Border.all(color: isActive ? active : lightGrey, width: .5),
             ),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
