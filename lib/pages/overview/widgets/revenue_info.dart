@@ -17,8 +17,9 @@ class RevenueInfo extends StatelessWidget {
                 text: "$title \n\n",
                 style: const TextStyle(color: lightGrey, fontSize: 16)),
             TextSpan(
-                text: "\$ $amount",
-                style: const TextStyle(fontSize: 24, fontWeight: FontWeight.bold)),
+                text: "₹ $amount",
+                style:
+                    const TextStyle(fontSize: 24, fontWeight: FontWeight.bold)),
           ])),
     );
   }

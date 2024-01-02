@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_web_dashboard/pages/clients/clients.dart';
-import 'package:flutter_web_dashboard/pages/drivers/drivers.dart';
+import 'package:flutter_web_dashboard/pages/hosted/widgets/hosted_table.dart';
+import 'package:flutter_web_dashboard/pages/hosting/widgets/hosting_table.dart';
 import 'package:flutter_web_dashboard/pages/overview/overview.dart';
 import 'package:flutter_web_dashboard/routing/routes.dart';
 
@@ -8,10 +8,12 @@ Route<dynamic> generateRoute(RouteSettings settings) {
   switch (settings.name) {
     case overviewPageRoute:
       return _getPageRoute(const OverviewPage());
-    case driversPageRoute:
-      return _getPageRoute(const DriversPage());
-    case clientsPageRoute:
-      return _getPageRoute(const ClientsPage());
+    case hostingTableRoute:
+      return _getPageRouteStack(const HostingTable());
+    case hostedTableRoute:
+      return _getPageRouteStack(
+        const HostedTable(),
+      );
     default:
       return _getPageRoute(const OverviewPage());
   }
@@ -19,4 +21,24 @@ Route<dynamic> generateRoute(RouteSettings settings) {
 
 PageRoute _getPageRoute(Widget child) {
   return MaterialPageRoute(builder: (context) => child);
+}
+
+PageRoute _getPageRouteStack(Widget firstChild) {
+  return MaterialPageRoute(
+    builder: (context) => Navigator(
+      onGenerateRoute: (settings) {
+        final routes = <String, WidgetBuilder>{
+          '/': (context) => firstChild,
+          overviewPageRoute: (context) {
+            if (Navigator.of(context).canPop()) {
+              Navigator.of(context).popUntil(ModalRoute.withName('/'));
+            }
+            return const OverviewPage();
+          },
+        };
+        WidgetBuilder builder = routes[settings.name]!;
+        return MaterialPageRoute(builder: (context) => builder(context));
+      },
+    ),
+  );
 }

@@ -3,11 +3,11 @@ const rootRoute = "/";
 const overviewPageDisplayName = "Overview";
 const overviewPageRoute = "/overview";
 
-const driversPageDisplayName = "Drivers";
-const driversPageRoute = "/drivers";
+const hostingTableDisplayName = "Live Events";
+const hostingTableRoute = "/live events";
 
-const clientsPageDisplayName = "Clients";
-const clientsPageRoute = "/clients";
+const hostedTableDisplayName = "Hosted Events";
+const hostedTableRoute = "/hosted";
 
 const authenticationPageDisplayName = "Log out";
 const authenticationPageRoute = "/auth";
@@ -19,11 +19,9 @@ class MenuItem {
   MenuItem(this.name, this.route);
 }
 
-
-
 List<MenuItem> sideMenuItemRoutes = [
- MenuItem(overviewPageDisplayName, overviewPageRoute),
- MenuItem(driversPageDisplayName, driversPageRoute),
- MenuItem(clientsPageDisplayName, clientsPageRoute),
- MenuItem(authenticationPageDisplayName, authenticationPageRoute),
+  MenuItem(overviewPageDisplayName, overviewPageRoute),
+  MenuItem(hostingTableDisplayName, hostingTableRoute),
+  MenuItem(hostedTableDisplayName, hostedTableRoute),
+  MenuItem(authenticationPageDisplayName, authenticationPageRoute),
 ];
